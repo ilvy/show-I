@@ -1,0 +1,46 @@
+﻿body {
+}
+.col-8-10 {
+    width: 80%;
+}
+.col-10-10 {
+    width: 100%;
+}
+header {
+    height: 280px;
+    background-color: #333333;
+    margin: 0 auto;
+    text-align: center;
+}
+header span {
+    color: #cdcdcd;
+    font-size: 3em;
+}
+
+section.resumeBg {
+    height: 1000px;
+    background-image: url('./img/me2.png');
+    background-repeat: no-repeat;
+    background-position: center -100px;
+    position: fixed;
+    top: 0px;
+    z-index: -1;
+}
+section.resume {
+    height: 280px;
+    background-color: rgba(0,255,255,0.3);
+    margin: 100px auto;
+    text-align: center;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+article.resume-content {
+    height: 60%;
+   
+}
+
+.introduce {
+    height: 500px;width: 100%;background-color: rgba(0,255,255,1);
+    /*margin-top: 200px;*/
+}
