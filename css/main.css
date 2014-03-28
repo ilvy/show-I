@@ -29,7 +29,7 @@ section.resumeBg {
 section.resume {
     height: 280px;
     background-color: rgba(0,255,255,0.3);
-    margin: 100px auto;
+    margin: 0px auto;
     text-align: center;
     /*display: -webkit-flex;
     -webkit-justify-content: center;
@@ -49,4 +49,12 @@ article.resume-content {
     width: 10%;
     height: 200px;
     background: red;
+    
+    
+}
+
+.fixed-bar {
+    width: 100%;
+    height: 80px;
+    background: black;
 }
