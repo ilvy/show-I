@@ -1,0 +1,13 @@
+﻿body {
+}
+@font-face {
+    font-family: 'single_maltaregular';
+    src: url('../fonts/singlemalta/singlemalta-webfont.eot');
+    src: url('../fonts/singlemalta/singlemalta-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/singlemalta/singlemalta-webfont.woff') format('woff'),
+         url('../fonts/singlemalta/singlemalta-webfont.ttf') format('truetype'),
+         url('../fonts/singlemalta/singlemalta-webfont.svg#single_maltaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

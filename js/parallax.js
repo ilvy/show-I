@@ -19,7 +19,8 @@ http://www.gnu.org/licenses/gpl.html
         windowHeight = $window.height();
     });
 
-    $.fn.parallax = function (xpos, speedFactor, outerHeight) {
+    $.fn.parallax = function (xpos, speedFactor, outerHeight, isRefresh) {
+        
         var $this = $(this);
         var getHeight;
         var firstTop;
@@ -48,7 +49,10 @@ http://www.gnu.org/licenses/gpl.html
         // function to be called whenever the window is scrolled or resized
         function update() {
             var pos = $window.scrollTop();
-
+            if (isRefresh) {
+                isRefresh = false;
+                return;
+            }
             $this.each(function () {
                 var $element = $(this);
                 var top = $element.offset().top;
