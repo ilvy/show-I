@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="./css/rockrain.css"/>
+    <title>rockrain</title>
+</head>
+    <body>
+        <canvas id="mainCanvas" class="main-canvas" >
+            您的老爷浏览器版本过低，不支持canvas，请尽快升级
+        </canvas>
+    </body>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mainCanvas");
+            var ctx = canvas.getContext("2d");
+
+            var winH = window.innerHeight,
+                winW = window.innerWidth;
+            canvas.width = winW;
+            canvas.height = winH;
+            new Rockrain(canvas,ctx);
+        };
+    </script>
+    <script src="js/rockrain.js"></script>
+</html>
