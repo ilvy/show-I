@@ -43,7 +43,7 @@
             _rr = this;
             ftp = setInterval(function() {
                 _rr.run();
-            },50);
+            },30);
         },
         /**
          *@desc:执行帧
@@ -88,8 +88,6 @@
         x: 0,
         y: 0,
         width: 0,
-        dirArr: [],
-        currDirIndex: '',
         touchCount:0,
         currImg: '',
         actionCount: 0,
@@ -102,7 +100,7 @@
             this.y = winH - manImg.height - 50;
             this.width = manImg.width;
             this.height = manImg.height;
-            this.rects[0] = new Rect(Math.floor(this.x / 4), this.y, Math.floor(this.width * 0.75), this.height);
+            this.rects[0] = new Rect(Math.floor(this.x + this.width/ 4), this.y+30, Math.floor(this.width / 2), this.height);
             return this;
         },
         update: function (direction) {
@@ -112,20 +110,16 @@
                 this.currDir = direction;
             }
             this.touchCount++;
-            //if (direction != this.dirArr[this.currDirIndex]) {
-            //    this.currDirIndex = 0;
-            //    this.dirArr = [];
-            //    this.currDir = direction;
-            //}
-            //this.dirArr.push(direction);
         },
         move:function(currDir) {
             if (currDir == 1) {
                 this.x += 10;
+                this.rects[0].x += 10;
             } else {
                 this.x -= 10;
+                this.rects[0].x -= 10;
             }
-            this.rects[0].x = Math.floor(this.x / 4);
+            
         },
         draw: function () {
             if (!this.touchCount) {
@@ -147,16 +141,13 @@
                     ctx.drawImage(this.currActions[1], this.x, this.y);
                     this.actionCount++;
                 } else if (this.actionCount / 3 < 3) {
-                    //if (this.currDirIndex < this.dirArr.length - 1) {
                     if (this.touchCount > 0) {
-                        //this.currDirIndex++;
                         this.touchCount--;
                         this.actionCount = 0;
                     } else {
                         this.isRunning = false;
                         this.move(this.currDir);
                         this.actionCount = 0;
-                        //this.dirArr = [];
                         this.touchCount = 0;
                     }
                 }
@@ -197,13 +188,23 @@
         this.h = 0;
         this.isDeath = 0;//判断是否超出屏幕范围
         this.rect = null;
-        this.init = function() {
+        this.init = function (isStraight) {
+            if (isStraight) {
+                this.vX = 0;
+            } else {
+            var positive = Math.random() < 0.5 ? true : false;
+            if (positive) {
+                    this.vX = Math.random() * 5 + 3;
+                } else {
+                    this.vX = -Math.random() * 5 + 3;
+                }
+            }
             this.w = rockImg.width;
             this.h = rockImg.height;
             this.x = Math.floor(winW * Math.random());
             this.y = Math.floor(-300 * Math.random());
-            this.vX = Math.random() * 5 + 2;
-            this.vY = Math.random() * 20 + 3;
+            this.vY = Math.random() * 10 + 10;
+            
             this.rect = new Rect(this.x, this.y, this.w, this.h);
             return this;
         };

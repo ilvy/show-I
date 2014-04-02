@@ -11,13 +11,13 @@
         collisionSingleRect:function(rect1,rect2) {
             var x1 = rect1.x, y1 = rect1.y, x2 = rect2.x, y2 = rect2.y;
             var width1 = rect1.width, height1 = rect1.height, width2 = rect2.width, height2 = rect2.height;
-            if (x1 + width1 < x2) {
+            if (x1 + width1 <= x2 && x2 >= x1) {
                 return false;
-            } else if (x1 > x2 + width2) {
+            } else if (x1 >= x2 + width2 && x1 >= x2) {
                 return false;
-            }else if (y1 + height1 < y2) {
+            }else if (y1 + height1 <= y2 && y1 <= y2) {
                 return false;
-            }else if (y1 > y2 + height2) {
+            }else if (y1 >= y2 + height2 && y1 >= y2) {
                 return false;
             } else {
                 return true;
