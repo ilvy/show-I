@@ -7,7 +7,7 @@
         leftImgs = [utils.createImg("images/left1.png"),utils.createImg("images/left2.png"),manImg],
         rightImgs = [utils.createImg("images/right1.png"),utils.createImg("images/right2.png"),manImg];
 
-    var rocks = [];
+    var rocks = [],golds = [];
     var ftp = "";
     var bgPos = {
         x: 0,
@@ -39,6 +39,7 @@
         init: function () {
             bgPos.init();
             initRocks(10);
+            initGolds(3);
             man.init().addTouchListener();
             _rr = this;
             ftp = setInterval(function() {
@@ -80,7 +81,12 @@
             }
         },
         updateBonus:function() {
-            
+            var goldNum = golds.length;
+            var gold;
+            for (var i = 0; i < goldNum; i++) {
+                gold = golds[i];
+                gold.updateAndDraw();
+            }
         }
     };
     
@@ -229,16 +235,52 @@
         return this;
     }
 
+    function initGolds(goldNum) {
+        if (!goldNum) {
+            goldNum = 3;
+        }
+        for (var i = 0; i < goldNum; i++) {
+            golds.push(new Gold().init());
+        }
+    }
+
     function Gold() {
         this.x = 0;
         this.y = 0;
         this.vX = 0;
         this.vY = 0;
-        this.init = function (x, y) {
-
+        this.init = function () {
+            this.w = goldImg.width;
+            this.h = goldImg.height;
+            this.x = Math.floor(winW * Math.random());
+            this.y = Math.floor(-500 * Math.random());
+            this.vY = Math.random() * 20 + 10;
+            this.rect = new Rect(this.x, this.y, this.w, this.h);
+            return this;
         };
         this.updateAndDraw = function () {
+            if (this.checkDeath() || this.isAbsorbed()) {
+                this.init();
+            }
+            ctx.drawImage(goldImg, this.x, this.y, this.w, this.h);
+            this.x += this.vX;
+            this.y += this.vY;
+            this.rect.y = this.y;
+        };
 
+        this.isAbsorbed = function() {
+            if (utils.collisionMultiRects(this.rect, man.rects)) {
+                //TODO 添加音频文件
+                return true;
+            }
+        };
+
+        this.checkDeath = function () {
+            if (this.x >= winW || this.x + goldImg.width <= 0 || this.y >= winH) {//death
+                return true;
+            } else {
+                return false;
+            }
         };
         
     }
