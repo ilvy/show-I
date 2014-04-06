@@ -12,9 +12,39 @@
             background-repeat: no-repeat;
             
         }
+        button {
+            width: 120px;
+            padding: 15px;
+            display: block;
+            margin: 60px auto;
+        }
+        button:first-child {
+            margin-top: 60%;
+        }
+        .scoreRecord {
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
-    <body>
-        
+    <body onload="onload()">
+        <button>
+            设置
+        </button>
+        <button onclick="enterGame()">
+            进入游戏
+        </button>
+        <div class="scoreRecord">
+            当前最高纪录：<span id="scoreRecord"></span>
+        </div>
     </body>
+    <script>
+        function enterGame() {
+            window.location.href = "rockrain.html";
+        }
+
+        function onload() {
+            document.getElementById("scoreRecord").innerHTML = (localStorage.getItem("rr_scoreRecord")||0);
+        }
+    </script>
 </html>

@@ -9,6 +9,7 @@
 
     var rocks = [],golds = [];
     var ftp = "";
+    var score = 0;
     var bgPos = {
         x: 0,
         y: 0,
@@ -54,9 +55,14 @@
             this.updateMan();
             this.updateRocks();
             this.updateBonus();
+            this.updateScore();
             for (var i = 0; i < rocks.length; i++) {
                 if (utils.collisionMultiRects(man.rects, rocks[i].rect)) {
                     clearInterval(ftp);
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 1000);
+                    
                 }
             }
             
@@ -86,6 +92,26 @@
             for (var i = 0; i < goldNum; i++) {
                 gold = golds[i];
                 gold.updateAndDraw();
+            }
+        },
+        updateScore: function () {
+            ctx.beginPath();
+            ctx.font = "bold 10px 幼圆";
+            var scoreStr = "当前得分：" + score;
+            var met = ctx.measureText(scoreStr);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(scoreStr, 0, winH - 200, 120);
+            ctx.closePath();
+            ctx.stroke();
+        },
+        updateScoreRecord:function() {
+            var preRecord = localStorage.getItem("rr_scoreRecord");
+            if (preRecord) {
+                if (preRecord < score) {
+                    localStorage.setItem("rr_scoreRecord", score);
+                }
+            } else {
+                localStorage.setItem("rr_scoreRecord", score);
             }
         }
     };
@@ -270,6 +296,7 @@
 
         this.isAbsorbed = function() {
             if (utils.collisionMultiRects(this.rect, man.rects)) {
+                score += 10;
                 //TODO 添加音频文件
                 return true;
             }
