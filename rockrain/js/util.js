@@ -3,9 +3,14 @@
         /*
          *@desc:创建图片
          */
-        createImg:function(imgPath) {
+        createImg:function(imgPath,scaleNum) {
             var img = new Image();
             img.src = imgPath;
+            if (scaleNum) {
+                img.width = img.width * scaleNum;
+                img.height = img.height * scaleNum;
+            }
+            
             return img;
         },
         collisionSingleRect:function(rect1,rect2) {

@@ -46,6 +46,7 @@
             ftp = setInterval(function() {
                 _rr.run();
             },30);
+            //ctx.drawImage(manImg,0,0, manImg.width, manImg.height, 100, 100, manImg.width * 0.5, manImg.height * 0.5);
         },
         /**
          *@desc:执行帧
@@ -129,9 +130,9 @@
         rects:[],
         init:function() {
             this.x = winW / 2;
-            this.y = winH - manImg.height - 50;
-            this.width = manImg.width;
-            this.height = manImg.height;
+            this.y = winH - manImg.height / 2 - 50;
+            this.width = manImg.width * 0.5;
+            this.height = manImg.height * 0.5;
             this.rects[0] = new Rect(Math.floor(this.x + this.width/ 4), this.y+30, Math.floor(this.width / 2), this.height);
             return this;
         },
@@ -155,7 +156,8 @@
         },
         draw: function () {
             if (!this.touchCount) {
-                ctx.drawImage(manImg, this.x, this.y);
+                //ctx.drawImage(manImg, this.x, this.y);
+                ctx.drawImage(manImg, 0, 0, manImg.width, manImg.height, this.x, this.y, manImg.width * 0.5, manImg.height * 0.5);
             } else {
                 if (this.currDir == 1) {
                     this.currActions = rightImgs;
@@ -167,10 +169,12 @@
                 }
                 
                 if (this.actionCount / 3 < 1) {
-                    ctx.drawImage(this.currActions[0], this.x, this.y);
+                    //ctx.drawImage(this.currActions[0], this.x, this.y);
+                    ctx.drawImage(this.currActions[0], 0, 0, manImg.width, manImg.height, this.x, this.y, manImg.width * 0.5, manImg.height * 0.5);
                     this.actionCount++;
                 } else if (this.actionCount / 3 < 2) {
-                    ctx.drawImage(this.currActions[1], this.x, this.y);
+                    //ctx.drawImage(this.currActions[1], this.x, this.y);
+                    ctx.drawImage(this.currActions[1], 0, 0, manImg.width, manImg.height, this.x, this.y, manImg.width * 0.5, manImg.height * 0.5);
                     this.actionCount++;
                 } else if (this.actionCount / 3 < 3) {
                     if (this.touchCount > 0) {
@@ -193,13 +197,19 @@
             var touchEvent = event;
             var that = man;
             if (touchEvent.originalEvent) {
+                console.log(touchEvent.originalEvent);
                 touchEvent = touchEvent.originalEvent.targetTouches[0];
+            } else if (touchEvent.targetTouches) {
+                touchEvent = touchEvent.targetTouches[0];
             }
-            if (touchEvent.pageX + 10 < that.x) {//man左移
+            var clientX = touchEvent.clientX;
+            if (clientX + 10 < that.x) {//man左移
                 that.update(-1);
+                console.log("left:" + clientX);
                 //that.dirArr.push(-1);
-            } else if (touchEvent.pageX - 10 > that.x + that.width) {//man右移
+            } else if (clientX - 10 > that.x + that.width) {//man右移
                 that.update(1);
+                console.log("right:" + clientX);
                 //that.dirArr.push(1);
             }
         }
