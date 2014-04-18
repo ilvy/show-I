@@ -1,0 +1,152 @@
+﻿.slider-container {
+    position: relative;
+    width: 64em;
+    height: 4em;
+    background: #FBFBFB;
+    margin-bottom: 1em;
+    background: white;
+}
+.slider-bar {
+    position: absolute;
+    height: 1em;
+    width: 100%;
+    background: #e2e4e3;
+    top: 40%;
+    left: 0px;
+    border-radius: 1em;
+}
+
+.slider-ball-right {
+    position: absolute;
+    border-radius: 1em;
+    top: 40%;
+    left: 20%;
+    border: .5em solid white;
+    width: 0px;
+    height: 0px;
+    z-index: 10001;
+}
+.slider-ball-left {
+    position: absolute;
+    border-radius: 1em;
+    top: 40%;
+    left: 10%;
+    border: .5em solid white;
+    width: 0px;height: 0px;
+    z-index: 10001;
+    cursor: pointer;
+}
+.slider-range {
+    position: absolute;
+    height: 1em;
+    width: 10%;
+    background: #32ccfe;
+    top: 40%;
+    left: 12%;
+    cursor: pointer;
+}
+.slider-degree-div {
+    position: absolute;
+    width: 100%;
+    height: 0em;
+    background: #000000;
+}
+.slider-degree {
+    border-right: 1px solid #d9dce5;
+    height: 0.4em;
+    line-height: 0.4em;
+    display: inline-block;
+    text-align: center;
+    width: 1.6em;
+    font-size: .7em;
+    position: relative;
+    top: -0.6em;
+}
+
+span span {
+    position: relative;
+    top: 0.7em;
+    display: block;
+}
+
+.year {
+    position: absolute;
+    top: 0em;
+    font-weight: bold;
+}
+
+
+.date-box {
+    position: absolute;
+    left: 300px;
+    top: -10px;
+    z-index: 20005;
+    width: 37px;
+    height: 25px;
+    background: white;
+}
+.lm-input {
+    /*width: 30px;
+    height: 25px;
+    background: red;*/
+    display: inline-block;
+}
+.date-box input {
+    width: 25px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.lm-btngroup {
+    width: 12px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+
+}
+
+.slider-add-date {
+    width: 100%;
+    height: 45%;
+    background: #32ccfe;
+    cursor: pointer;/*url('./plus1.ico'),auto;*/
+}
+.slider-add-date span {
+
+    top: -4px;
+    left: 2.5px;
+}
+.slider-sub-date {
+    margin-top: 15%;
+    width: 100%;
+    height: 45%;
+    cursor: pointer;/*url('./minus.ico'), auto;*/
+    background: #32ccfe;
+}
+.slider-sub-date span {
+
+    top: -4px;
+    left: 0.5px;
+}
+.inactive_input {
+    background: #e2f7ff;
+}
+.active_input {
+    background: white;
+}
+
+.date-box:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    /*border: transparent;*/
+    border: 5px  solid;
+    border-color: #b8b6b8 transparent transparent transparent;
+    position: absolute;
+    z-index: 20010;
+    top: 96%;
+    left: 36%;
+}

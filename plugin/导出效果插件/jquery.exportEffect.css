@@ -1,0 +1,27 @@
+﻿#export_arrow {
+            width: 60px;
+            height: 30px;
+            background: #00ced1;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            z-index: 1001;
+            
+        }
+        #export_arrow:after {
+            position: absolute;
+            content: "";
+            border: 30px solid #00ced1;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-top: 30px solid transparent;
+            left: 60px;
+            top: -15px;
+        }
+        #fileImg {
+            position: absolute;
+            top: 40%;
+            left: 43%;
+            z-index: 1000;
+            height: 131px;
+        }

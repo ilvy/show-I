@@ -1,0 +1,61 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>仿苹果电脑任务栏菜单</title>
+    <script src="../jquery-1.9.1.js"></script>
+    <script src="./jquery.iTasklistEffect.js"></script>
+<style type="text/css"> 
+body{margin:0;padding:0}
+#menu{position:absolute;width:100%;bottom: 100px;text-align:center;}
+/*img {
+    position: absolute;
+    top: 100px;
+}*/
+</style>
+    <script type="text/javascript">
+
+//window.onload = function () {
+	//	var oMenu = document.getElementById("menu");
+	//	var aImg = oMenu.getElementsByTagName("img");
+	//	var aWidth = [];
+	//	var i = 0;
+	//	//保存原宽度, 并设置当前宽度
+	//	for (i = 0; i < aImg.length; i++) {
+	//		aWidth.push(aImg[i].offsetWidth * 2);
+	//		aImg[i].width = parseInt(aImg[i].offsetWidth);
+	//	    //aImg[i].style.left = i*(aImg[i].offsetWidth + 10) + "px";
+	//	}
+	//	//鼠标移动事件
+	//	document.onmousemove = function (event) {
+	//		var event = event || window.event;
+	//		for (i = 0; i < aImg.length; i++) {
+	//			var a = event.clientX - aImg[i].offsetLeft - aImg[i].offsetWidth / 2;
+	//			var b = event.clientY - aImg[i].offsetTop - oMenu.offsetTop - aImg[i].offsetHeight / 2;
+	//			var iScale = 1 - Math.sqrt(a * a + b * b) / 350;
+	//			if (iScale < 0.5) iScale = 0.5;
+	//			aImg[i].width = aWidth[i] * iScale;
+	//		}
+	//	};
+    //};
+</script>
+</head>
+    <body>
+        <div id="menu">
+            <a style="cursor: pointer;" id="first"><img src="./img/1.png" /></a>
+            <a style="cursor: pointer;"><img src="./img/2.png" /></a>
+            <a style="cursor: pointer;"><img src="./img/3.png" /></a>
+            <a style="cursor: pointer;"><img src="./img/4.png" /></a>
+            <a style="cursor: pointer;"><img src="./img/5.png" /></a>
+            <a style="cursor: pointer;"><img src="./img/6.png" /></a>
+        </div>
+    </body>
+    <script>
+        window.onload = function() {
+            $("#menu").iTasklist({defaultTask:"first"});
+        };
+        $(document).ready(function() {
+
+        });
+    </script>
+</html>

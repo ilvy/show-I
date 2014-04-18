@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="jquery.scrollbar.css"/>
+    <script src="../jquery-1.9.1.js"></script>
+    <style>
+        .outerDiv {
+            width: 1000px;
+            
+        }
+        .table {
+            width: 3165px;
+            margin-left: 0px;
+        }
+
+        .table-bordered {
+            border: 1px solid #cdcdcd;
+        }
+        th,td {
+            border: 1px solid #eeeeee;
+        }
+        .date {
+            position: absolute;
+            left: 0;
+            background: #eeeeee;
+        }
+
+
+    </style>
+
+</head>
+    <body>
+        <div id="outerDiv" class="outerDiv">
+        <div id="tableDiv">
+            <table class="table table-bordered" id="movingTarget">
+                <thead>
+                    <tr>
+                        <th>投放费用</th>
+                        <th>落地页访问数</th>
+                        <th>落地页到达数</th>
+                        <th>落地页到达UV</th>
+                        <th>落地页到达1</th>
+                        <th>落地页到达2</th>
+                        <th>落地页到达3</th>
+                        <th>落地页到达4</th>
+                        <th>落地页到达5</th>
+                        <th>落地页到达6</th>
+                        <th>落地页到达6</th>
+                        <th>落地页到达6</th>
+                        <th>落地页到达6</th>
+                        <th>落地页到达6</th>
+                        <th>落地页到达6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  style="position: relative;">
+                        <td>8,750,977<div class="date">2010-1-1</div></td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                    </tr>
+                    <tr  style="position: relative;">
+                        <td>8,750,977<div class="date">2010-1-1</div></td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                    </tr>
+                    <tr  style="position: relative;">
+                        <td>8,750,977<div class="date">2010-1-1</div></td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                        <td>8,750,977</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<div class="scrollbar-bottom" id="scrollbar">
+                    <div class="stick-bottom" id="stick"></div>
+                    <div class="scrollBall-bottom" id="scrollBall"><a><div class="white-ball" id="scrollBallImg"></div></a></div>
+                </div>-->
+            </div>
+        </div>
+        
+    <style>
+        
+        /*.table {
+            width: 100%;
+            margin-left: 0px;
+            height: 1050px;
+        }
+
+        .outerDiv {
+            height: 350px;   
+            width: 500px;    
+            overflow-y: hidden; 
+            overflow-x: hidden; 
+        }*/
+        
+        
+    </style>
+        
+            
+       <!-- <table class="table table-bordered" id="table">
+            <thead>
+                <tr>
+                    <th>投放费用</th>
+                    <th>落地页访问数</th>
+                    <th>落地页到达数</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="outerDiv" class="outerDiv">
+                <table id="movingTarget" class="table table-bordered">
+                    <tbody >
+                        <tr>
+                            <td>8,750,977</td>
+                            <td>8,750,977</td>
+                            <td>8,750,977</td>
+                        </tr>
+                        <tr>
+                            <td>8,750,977</td>
+                            <td>8,750,977</td>
+                            <td>8,750,977</td>
+                        </tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                        <tr><td>8,750,977</td><td>8,750,977</td><td>8,750,977</td></tr>
+                    </tbody>
+                </table>
+                
+            <div class="scrollbar-right" id="scrollbar">
+                <div class="stick-right" id="stick"></div>
+                <div class="scrollBall-right" id="scrollBall"><a onclick=""><img id="scrollBallImg" src="../image/scrollball.png" style=""/></a></div>
+            </div>
+            
+
+        </div>-->
+    
+    </body>
+    <script>
+        $(function() {
+            $("#tableDiv").addScroll({ target: "#movingTarget", mode: "bottom" });
+            $(".date").css("left", "10px");
+            $(".date").each(function() {
+                var $this = $(this);
+                var $parent = $this.parent();
+                $this.css({
+                    top:$parent.offset().top+"px"
+                });
+            });
+        })
+        
+    </script>
+    <script src="jquery.scrollbar.js"></script>
+</html>

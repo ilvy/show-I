@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="jquery.exportEffect.css"/>
+    <script src="../jquery-1.9.1.js"></script>
+    <script src="jquery.exportEffect.js"></script>
+    <title></title>
+    <style>
+        #arrow {
+            width: 60px;
+            height: 30px;
+            background: #00ced1;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            z-index: 1001;
+            /*transition: all 1s ease-in;
+            -webkit-transaction:transform 1s linear;
+            -moz-transaction:transform 1s linear;
+            -o-transaction:transform 1s linear;*/
+            -webkit-animation-name:'moving';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+             -webkit-animation-duration: 1s;/*动画持续时间*/
+             -webkit-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+             -webkit-animation-delay: 0s;/*动画延迟时间*/
+             -webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+             -webkit-animation-direction: normal;/*定义动画方式*/
+
+             -moz-animation-name:'moving';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+             -moz-animation-duration: 1s;/*动画持续时间*/
+             -moz-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+             -moz-animation-delay: 0s;/*动画延迟时间*/
+             -moz-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+             -moz-animation-direction: normal;/*定义动画方式*/
+            
+             -ms-animation-name:'moving';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+             -ms-animation-duration: 1s;/*动画持续时间*/
+             -ms-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+             -ms-animation-delay: 0s;/*动画延迟时间*/
+             -ms-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+             -ms-animation-direction: normal;/*定义动画方式*/
+
+             animation-name:'moving';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+             animation-duration: 1s;/*动画持续时间*/
+             animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+             animation-delay: 0s;/*动画延迟时间*/
+             animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+             animation-direction: normal;/*定义动画方式*/
+        }
+        /*#arrow:after {
+            position: absolute;
+            content: "";
+            border: 30px solid #00ced1;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-top: 30px solid transparent;
+            left: 60px;
+            top: -15px;
+        }
+        #fileImg {
+            position: absolute;
+            top: 40%;
+            left: 43%;
+            z-index: 1000;
+            height: 131px;
+        }*/
+        /*@-webkit-keyframes moving {
+            0% {
+                   left: 30%;
+               }
+            10% {
+                    left: 32%;
+                }
+            20% {
+                    left: 34%;
+                }
+            30% {
+                    left: 36%;
+                }
+            40% {
+                    left: 38%;
+                }
+            50% {
+                    left: 40%;
+                }
+            60% {
+                    left: 42%;
+                }
+            70% {
+                    left: 44%;
+                }
+            80% {
+                    left: 46%;
+                }
+            90% {
+                    left: 48%;
+                }
+            100% {
+                    left: 50%;
+                }
+        }
+        @-moz-keyframes moving {
+            0% {
+                   left: 30%;
+               }
+            10% {
+                    left: 32%;
+                }
+            20% {
+                    left: 34%;
+                }
+            30% {
+                    left: 36%;
+                }
+            40% {
+                    left: 38%;
+                }
+            50% {
+                    left: 40%;
+                }
+            60% {
+                    left: 42%;
+                }
+            70% {
+                    left: 44%;
+                }
+            80% {
+                    left: 46%;
+                }
+            90% {
+                    left: 48%;
+                }
+            100% {
+                    left: 50%;
+                }
+        }
+        @keyframes moving {
+            0% {
+                   left: 30%;
+               }
+            10% {
+                    left: 32%;
+                }
+            20% {
+                    left: 34%;
+                }
+            30% {
+                    left: 36%;
+                }
+            40% {
+                    left: 38%;
+                }
+            50% {
+                    left: 40%;
+                }
+            60% {
+                    left: 42%;
+                }
+            70% {
+                    left: 44%;
+                }
+            80% {
+                    left: 46%;
+                }
+            90% {
+                    left: 48%;
+                }
+            100% {
+                    left: 50%;
+                }
+        }
+        @-ms-keyframes moving {
+            0% {
+                   left: 30%;
+               }
+            10% {
+                    left: 32%;
+                }
+            20% {
+                    left: 34%;
+                }
+            30% {
+                    left: 36%;
+                }
+            40% {
+                    left: 38%;
+                }
+            50% {
+                    left: 40%;
+                }
+            60% {
+                    left: 42%;
+                }
+            70% {
+                    left: 44%;
+                }
+            80% {
+                    left: 46%;
+                }
+            90% {
+                    left: 48%;
+                }
+            100% {
+                    left: 50%;
+                }
+        }*/
+    </style>
+</head>
+    <body>
+        
+        <!-- <div id="arrow"></div>
+            <div id="fileImg"><img src="file2.png"/></div>-->
+        <button onclick="hide(event)">hide</button>
+        <script>
+            document.addEventListener("click", function (event) {
+                
+                moving()
+            })
+
+            var direct = false;
+            function moving() {
+                //$("#arrow").css({
+                //    '-webkit-transform': 'translateX(200px)',
+                //    '-moz-transform': 'translateX(200px)',
+                //    '-o-transform': 'translateX(200px)'
+                //});
+                //window.setInterval(function () {
+                //    if (direct = !direct) {
+                //        $("#arrow").css({
+                //            '-webkit-transform': 'translateX(200px)',
+                //            '-moz-transform': 'translateX(200px)',
+                //            '-o-transform': 'translateX(200px)'
+                //        });
+                //    } else {
+                //        $("#arrow").css({
+                //            '-webkit-transform': 'translateX(-200px)',
+                //            '-moz-transform': 'translateX(-200px)',
+                //            '-o-transform': 'translateX(-200px)'
+                //        });
+                //    }
+                    
+                //}, 1300)
+                //$("#arrow").animate({
+                //    left: "35%"
+                //}, 500);
+                //window.setInterval(function() {
+                //    if (direct = !direct) {
+                //        $("#arrow").animate({
+                //            left: "40%"
+                //        }, 1000);
+                //    } else {
+                //        $("#arrow").animate({
+                //            left: "35%"
+                //        }, 50);
+                //    }
+
+                //}, 500);
+                $.export();
+
+            }
+
+            function hide(event) {
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                } else if (event.cancelBubble) {
+                    event.cancelBubble = true;
+                }
+                $.export({hide:true});
+            }
+
+           
+           
+        </script>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>dateSlider</title>
+    <link href="bootstrap.min.css" rel="stylesheet"/>
+    <link href="jquery.dateSlider.css" rel="stylesheet"/>
+    <script src="../jquery-1.9.1.js"></script>
+    <script src="jquery.dateSlider.js"></script>
+    <style>
+        .box {
+      display: -webkit-flex;
+      -webkit-justify-content: center;
+      -webkit-align-items: center;
+            width: 100%;
+            height: 500px;
+            
+     }
+        .contain {
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+        }
+        #em {
+            height: 1em;
+            width: 1em;
+            background: red;
+        }
+        body {
+            padding-top: 100px;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+    <body>
+        <div class="slider-container" id="dateSlider">
+            <div class="date-box" id="slider-ldate-box">
+                <input type="text" data-ball="l" class="inactive_input"/><!--<span style="position: absolute;left: 25px;">日</span>-->
+                <div class="lm-btngroup">
+                    <div class="slider-add-date" data-ball="l">
+                        <span class="glyphicon glyphicon-plus" style="color: white;"></span>
+                    </div>
+                    <div class="slider-sub-date" data-ball="l">
+                        <span class="glyphicon glyphicon-minus" style="color: white;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="date-box" id="slider-rdate-box">
+                <input type="text" data-ball="r"  class="inactive_input"/><!--<span style="position: absolute;left: 25px;">日</span>-->
+                <div class="lm-btngroup">
+                    <div class="slider-add-date" data-ball="r">
+                        <span class="glyphicon glyphicon-plus" style="color: white;"></span>
+                    </div>
+                    <div class="slider-sub-date" data-ball="r">
+                        <span class="glyphicon glyphicon-minus" style="color: white;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-ball-left" data-slider="l"></div>
+            <div class="slider-bar"></div>
+            <div class="slider-range" data-slider="range"></div>
+            <div class="slider-ball-right" data-slider="r"></div>
+            <div class="slider-degree-div">
+                
+            </div>
+        </div>
+        <section class='box'>
+            <div class="contain">
+                <div>A</div><div>B</div><div>C</div>
+            </div>
+            
+        </section>
+        <input type="button" id="refresh" value="刷新" onclick="refresh()"/>
+        <div id="em"></div>
+    </body>
+    <script>
+        var slider = $("#dateSlider").dateSlider({
+            startYear: 2013,
+            startMonth: 2,
+            endYear: 2014,
+            endMonth: 1,
+            changePeriod:function(startTime,endTime) {
+                console.log(startTime.year + " " + startTime.month+" "+startTime.date);
+                console.log(endTime.year + " " + endTime.month + " " + endTime.date);
+            },
+            isBorderBox:true
+        });
+
+        function refresh() {
+            slider.refreshSlider({startYear:2013,startMonth:3,endYear:2013,endMonth:9});
+        }
+        
+        $("body").refreshSlider();
+    </script>
+</html>

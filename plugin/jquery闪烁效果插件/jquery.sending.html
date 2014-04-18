@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../jquery.css/jquery.flashWord.css"/>
+    <script src="../jquery-1.9.1.js"></script>
+    <script src="jquery.flashWords.js"></script>
+    <title></title>
+    
+</head>
+    <body style="height: 2000px;">
+        <input type="button" value="flash" onclick="beginflash()"/>
+        <input type="button" value="stop" onclick="stopflash()"/>
+        <div onclick="flashing()" style="width: 80px;height: 30px;border: 1px solid blueviolet;" id="loginBtn">登录</div>
+        <!--<div id="flash" class="flash-word">
+                <p id="word0" class="single-word" style="font-size: 24px;">发</p>
+                <p id="word1" class="single-word" style="font-size: 40px;">送</p>
+                <p id="word2" class="single-word" style="font-size: 24px;">中</p>
+                <p id="word3" class="single-word" style="font-size: 24px;">.</p>
+                <p id="word4" class="single-word" style="font-size: 24px;">.</p>
+                <p id="word5" class="single-word" style="font-size: 24px;">.</p>
+            </div>-->
+
+        <script>
+            function beginflash() {
+                $.showFlashWord({ showStr: "登录中...", left: "40%", speed: 400, duration: 100, flashMode: 1, bigSize: 96, smallSize: 48,fontMargin:10 });
+                //jquery("body").showFlashWord({ showStr: "0000" });
+            }
+            function stopflash() {
+                $.flashWord.hide();
+            }
+
+            function flashing() {
+                $("#loginBtn").empty();
+                $("#loginBtn").showFlashWord({ showStr: "登录中...", left: "40%", speed: 400, duration: 100, flashMode: 1,smallSize:10 });
+            }
+        </script>
+    </body>
+</html>
